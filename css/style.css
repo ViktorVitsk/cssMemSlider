@@ -1,0 +1,255 @@
+body {
+  color: #fff;
+  background-color: #25282a;
+}
+
+.wrapper {
+  margin: 10vh 10vw;
+  width: 80vw;
+  height: 80vh;
+}
+
+.slides {
+  grid-area: sl;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.switches {
+  grid-area: sw;
+}
+
+.descriptions {
+  grid-area: ds;
+}
+
+.slider {
+  max-width: 100rem;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    'sl sl sl'
+    'ds ds sw';
+}
+
+.slides img {
+  width: 100%;
+  height: 50vw;
+  max-height: 50vh;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+}
+
+.slides {
+  display: grid;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+
+input {
+  display: none;
+}
+
+.switches {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.switches label {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.switches label:hover .bar {
+  background-color: #fff;
+  border-color: #fff;
+  transition: 0.5s ease-out;
+}
+
+.switches label:active .bar {
+  background-color: #71acff;
+  border-color: #71acff;
+  transition: 0.5s ease-out;
+}
+
+#slide-1:checked ~ .wrapper label[for='slide-1'] .bar {
+  background: transparent;
+  transition: 0.5s ease-out;
+}
+
+#slide-2:checked ~ .wrapper label[for='slide-2'] .bar {
+  background: transparent;
+  transition: 0.5s ease-out;
+}
+
+#slide-3:checked ~ .wrapper label[for='slide-3'] .bar {
+  background: transparent;
+  transition: 0.5s ease-out;
+}
+
+#slide-4:checked ~ .wrapper label[for='slide-4'] .bar {
+  background: transparent;
+  transition: 0.5s ease-out;
+}
+
+.bar {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  border: #71acff solid 0.2rem;
+  background: #71acff;
+}
+
+.descriptions {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+  position: relative;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+@keyframes slide-in {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+#slide-1:checked ~ .wrapper .image-1 {
+  z-index: 1;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-1:checked ~ .wrapper .description-2,
+#slide-1:checked ~ .wrapper .description-3,
+#slide-1:checked ~ .wrapper .description-4 {
+  animation-name: slide-out;
+  animation-duration: 1s;
+  margin: -100rem;
+}
+
+#slide-1:checked ~ .wrapper .description-1 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-2:checked ~ .wrapper .image-2 {
+  z-index: 2;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-2:checked ~ .wrapper .description-1,
+#slide-2:checked ~ .wrapper .description-4,
+#slide-2:checked ~ .wrapper .description-3 {
+  animation-name: slide-out;
+  animation-duration: 1s;
+  margin: -100rem;
+}
+
+#slide-2:checked ~ .wrapper .description-2 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-2:checked ~ .wrapper .image-1 {
+  z-index: 1;
+}
+
+#slide-3:checked ~ .wrapper .image-3 {
+  z-index: 2;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-3:checked ~ .wrapper .description-1,
+#slide-3:checked ~ .wrapper .description-2,
+#slide-3:checked ~ .wrapper .description-4 {
+  animation-name: slide-out;
+  animation-duration: 1s;
+  margin: -100rem;
+}
+
+#slide-3:checked ~ .wrapper .description-3 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-3:checked ~ .wrapper .image-2 {
+  z-index: 1;
+}
+
+#slide-4:checked ~ .wrapper .image-4 {
+  z-index: 2;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+#slide-4:checked ~ .wrapper .description-1,
+#slide-4:checked ~ .wrapper .description-2,
+#slide-4:checked ~ .wrapper .description-3 {
+  animation-name: slide-out;
+  animation-duration: 1s;
+  margin: -100rem;
+}
+
+#slide-4:checked ~ .wrapper .description-4 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+/* @media (min-width: 1280px) {
+  .slider {
+    max-width: 100rem;
+    margin: auto;
+  }
+} */
+
+@media (max-width: 480px) {
+  .wrapper {
+    margin: 2.5vh 2.5vw;
+    width: 95vw;
+    height: 95vh;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .slider {
+    grid-template-areas:
+    'sl sl sl'
+    '. sw .'
+    'ds ds ds';
+  }
+  .descriptions {
+    align-self: start;
+  }
+}
