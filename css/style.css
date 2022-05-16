@@ -24,6 +24,8 @@ body {
 }
 
 .slider {
+  max-width: 100rem;
+  margin: auto;
   display: grid;
   gap: 2rem;
   grid-template-areas:
@@ -224,6 +226,13 @@ h3 {
   animation-name: slide-in;
   animation-duration: 1s;
 }
+
+/* @media (min-width: 1280px) {
+  .slider {
+    max-width: 100rem;
+    margin: auto;
+  }
+} */
 
 @media (max-width: 480px) {
   .wrapper {
