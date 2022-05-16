@@ -224,3 +224,22 @@ h3 {
   animation-duration: 1s;
 }
 
+@media (max-width: 480px) {
+  .wrapper {
+    margin: 2.5vh 2.5vw;
+    width: 95vw;
+    height: 95vh;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .slider {
+    grid-template-areas:
+    'sl sl sl'
+    '. sw .'
+    'ds ds ds';
+  }
+  .descriptions {
+    align-self: start;
+  }
+}
