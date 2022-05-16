@@ -25,17 +25,16 @@ body {
 
 .slider {
   display: grid;
-  grid-row-gap: 1rem;
-  grid-template-rows: 5fr 0.1fr 0.5fr;
+  gap: 2rem;
   grid-template-areas:
-    'sl'
-    'sw'
-    'ds';
+    'sl sl sl'
+    'ds ds sw';
 }
 
 .slides img {
   width: 100%;
-  height: 50vh;
+  height: 50vw;
+  max-height: 50vh;
   grid-column-start: 1;
   grid-row-start: 1;
   position: relative;
@@ -224,3 +223,4 @@ h3 {
   animation-name: slide-in;
   animation-duration: 1s;
 }
+
